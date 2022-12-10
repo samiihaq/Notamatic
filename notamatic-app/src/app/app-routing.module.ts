@@ -15,6 +15,26 @@ const routes: Routes = [
         (m) => m.SplashscreenPageModule
       ),
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registration',
+    loadChildren: () => import('./pages/registration/registration.module').then( m => m.RegistrationPageModule)
+  },
+  {
+    path: 'notes',
+    loadChildren: () => import('./pages/notes/notes.module').then( m => m.NotesPageModule)
+  },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'reminder',
+    loadChildren: () => import('./pages/reminder/reminder.module').then( m => m.ReminderPageModule)
+  },
 ];
 
 @NgModule({
