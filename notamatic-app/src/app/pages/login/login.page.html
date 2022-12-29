@@ -34,8 +34,13 @@
         </ion-item>
       </ion-card-content>
       <ion-card-content>
-        <ion-button color="secondary" expand="block">Login</ion-button>
-        <ion-button href="/registration" color="secondary" expand="block"
+        <ion-button [routerLink]="['/']" color="secondary" expand="block"
+          >Login</ion-button
+        >
+        <ion-button
+          [routerLink]="['/registration']"
+          color="secondary"
+          expand="block"
           >Register</ion-button
         >
       </ion-card-content>

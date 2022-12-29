@@ -19,6 +19,13 @@ const routes: Routes = [
         (m) => m.RegistrationPageModule
       ),
   },
+  {
+    path: 'addnotepage',
+    loadChildren: () =>
+      import('./pages/addnotepage/addnotepage.module').then(
+        (m) => m.AddnotepagePageModule
+      ),
+  },
 ];
 
 @NgModule({
