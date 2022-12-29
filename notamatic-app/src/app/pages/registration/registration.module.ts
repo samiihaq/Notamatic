@@ -6,15 +6,12 @@ import { IonicModule } from '@ionic/angular';
 
 import { RegistrationPageRoutingModule } from './registration-routing.module';
 
-import { RegistrationPage } from './registration.page';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistrationPageRoutingModule
+    RegistrationPageRoutingModule,
   ],
-  declarations: [RegistrationPage]
 })
 export class RegistrationPageModule {}
