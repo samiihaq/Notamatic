@@ -1,5 +1,10 @@
 <ion-text color="secondary"> <h1 class="h1">Notes</h1></ion-text>
 
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let note of notes">{{ note.title }}</button>
+  </ion-list>
+</ion-content>
 <div class="addButtonPosition">
   <ion-tab-button [routerLink]="['/addnotepage']">
     <ion-icon color="secondary" name="add-circle"></ion-icon>

@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginPage } from './pages/login/login.page';
 import { RegistrationPage } from './pages/registration/registration.page';
 import { IonicStorageModule } from '@ionic/storage';
+import { NoteService } from './note-service.service';
+import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 
 @NgModule({
   declarations: [AppComponent, LoginPage, RegistrationPage],
@@ -18,7 +20,11 @@ import { IonicStorageModule } from '@ionic/storage';
     AppRoutingModule,
     IonicStorageModule.forRoot(),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    NoteService,
+    SQLite,
+  ],
   bootstrap: [AppComponent],
   entryComponents: [AppComponent, LoginPage, RegistrationPage],
 })

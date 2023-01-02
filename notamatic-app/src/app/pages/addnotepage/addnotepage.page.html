@@ -1,9 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>addnotepage</ion-title>
-  </ion-toolbar>
+  <ion-text color="secondary"> <h1 class="h1">Add a note</h1></ion-text>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <form (ngSubmit)="addNote(f.value)" #f="ngForm"></form>
+  <ion-item
+    ><ion-label> Title </ion-label>
+    <ion-textarea name="title" ngModel></ion-textarea
+  ></ion-item>
+  <ion-button type="submit">Save Note</ion-button>
 </ion-content>

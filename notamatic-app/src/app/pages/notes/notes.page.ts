@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { AddnotepagePageModule } from '../addnotepage/addnotepage.module';
+import { NoteService } from 'src/app/note-service.service';
 import { AddnotepagePage } from '../addnotepage/addnotepage.page';
 
 @Component({
@@ -8,8 +8,19 @@ import { AddnotepagePage } from '../addnotepage/addnotepage.page';
   templateUrl: './notes.page.html',
   styleUrls: ['./notes.page.scss'],
 })
-export class NotesPage implements OnInit {
-  constructor(public navCtrl: NavController) {}
+export class NotesPage {
+  notes: { title: string }[] = [];
 
-  ngOnInit() {}
+  constructor(
+    public navCtrl: NavController,
+    private noteService: NoteService
+  ) {}
+
+  ionViewWillEnter() {
+    this.notes = this.getAllNotes();
+  }
+
+  getAllNotes() {
+    return this.noteService.getAllNotes();
+  }
 }

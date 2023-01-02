@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { NoteService } from '../../note-service.service';
 
 @Component({
   selector: 'app-addnotepage',
   templateUrl: './addnotepage.page.html',
   styleUrls: ['./addnotepage.page.scss'],
 })
-export class AddnotepagePage implements OnInit {
+export class AddnotepagePage {
+  constructor(
+    public navCtrl: NavController,
+    private noteService: NoteService
+  ) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  addNote(value: { title: string }) {
+    this.noteService.addNote(value);
   }
-
 }

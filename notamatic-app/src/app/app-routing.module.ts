@@ -26,6 +26,10 @@ const routes: Routes = [
         (m) => m.AddnotepagePageModule
       ),
   },
+  {
+    path: 'database',
+    loadChildren: () => import('./pages/database/database.module').then( m => m.DatabasePageModule)
+  },
 ];
 
 @NgModule({
