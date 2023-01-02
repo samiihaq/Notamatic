@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { NoteService } from 'src/app/note-service.service';
+import { Note } from 'src/models/note.models';
 import { AddnotepagePage } from '../addnotepage/addnotepage.page';
 
 @Component({
@@ -9,7 +10,7 @@ import { AddnotepagePage } from '../addnotepage/addnotepage.page';
   styleUrls: ['./notes.page.scss'],
 })
 export class NotesPage {
-  notes: { title: string }[] = [];
+  notes!: Promise<Note[]>;
 
   constructor(
     public navCtrl: NavController,

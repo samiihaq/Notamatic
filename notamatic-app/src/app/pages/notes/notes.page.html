@@ -2,7 +2,9 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let note of notes">{{ note.title }}</button>
+    <button ion-item *ngFor="let note of notes | async">
+      {{ note.title }}
+    </button>
   </ion-list>
 </ion-content>
 <div class="addButtonPosition">
