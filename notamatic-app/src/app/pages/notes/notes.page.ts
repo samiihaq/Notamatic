@@ -11,14 +11,20 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   styleUrls: ['./notes.page.scss'],
 })
 export class NotesPage {
-  notes!: Promise<Note[]>;
+  notes: Promise<Note[]>;
+
+  doSomething(event) {
+    setTimeout(() => {
+      event.target.complete();
+    }, 2000);
+  }
 
   constructor(
     public navCtrl: NavController,
     private noteService: NoteService
   ) {}
 
-  ionViewWillEnter() {
+  ionViewDidEnter() {
     this.notes = this.getAllNotes();
   }
 
@@ -27,6 +33,6 @@ export class NotesPage {
   }
 
   notePageForward() {
-    this.navCtrl.navigateForward('/addnotepage');
+    this.navCtrl.navigateForward('/tabs/addnotepage');
   }
 }

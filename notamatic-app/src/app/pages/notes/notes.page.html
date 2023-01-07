@@ -1,6 +1,16 @@
-<ion-text color="secondary"> <h1 class="h1">Notes</h1></ion-text>
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doSomething($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Refresh to view changes"
+      refreshingSpinner="circles"
+      refreshingText="Fetching your
+      notes"
+    ></ion-refresher-content>
+  </ion-refresher>
 
-<ion-content padding>
+  <ion-text color="secondary"> <h1 class="h1">Notes</h1></ion-text>
+
   <ion-list>
     <ion-item button *ngFor="let note of notes | async">
       {{ note.subject }}

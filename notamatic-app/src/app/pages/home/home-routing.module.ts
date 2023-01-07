@@ -18,18 +18,7 @@ const routes: Routes = [
           },
         ],
       },
-      {
-        path: 'reminder',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../reminder/reminder.module').then(
-                (m) => m.ReminderPageModule
-              ),
-          },
-        ],
-      },
+
       {
         path: 'calendar',
         children: [
@@ -38,6 +27,18 @@ const routes: Routes = [
             loadChildren: () =>
               import('../calendar/calendar.module').then(
                 (m) => m.CalendarPageModule
+              ),
+          },
+        ],
+      },
+      {
+        path: 'addnotepage',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../addnotepage/addnotepage.module').then(
+                (m) => m.AddnotepagePageModule
               ),
           },
         ],

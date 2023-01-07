@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { NoteService } from '../../note-service.service';
 import { Note } from 'src/models/note.models';
@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
 })
 export class AddnotepagePage {
   formGroup: FormGroup;
-  note!: Note;
+  note: Note;
   date: Date = new Date();
   title: string = '';
   subject: string = '';
@@ -40,6 +40,6 @@ export class AddnotepagePage {
 
   addNote(note: Note) {
     this.NoteService.addNote(note);
-    this.navCtrl.navigateBack('notes');
+    this.navCtrl.navigateBack('/tabs/notes');
   }
 }
