@@ -28,7 +28,15 @@ const routes: Routes = [
   },
   {
     path: 'database',
-    loadChildren: () => import('./pages/database/database.module').then( m => m.DatabasePageModule)
+    loadChildren: () =>
+      import('./pages/database/database.module').then(
+        (m) => m.DatabasePageModule
+      ),
+  },
+  {
+    path: 'notes',
+    loadChildren: () =>
+      import('./pages/notes/notes.module').then((m) => m.NotesPageModule),
   },
 ];
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,8 +13,9 @@ import { AddnotepagePage } from './addnotepage.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    AddnotepagePageRoutingModule
+    AddnotepagePageRoutingModule,
+    ReactiveFormsModule,
   ],
-  declarations: [AddnotepagePage]
+  declarations: [AddnotepagePage],
 })
 export class AddnotepagePageModule {}

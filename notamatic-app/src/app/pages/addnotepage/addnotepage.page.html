@@ -1,49 +1,72 @@
-<ion-header>
-  <ion-text color="secondary"> <h1 class="h1">Add a note</h1></ion-text>
-</ion-header>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-Href="notes"></ion-back-button>
+  </ion-buttons>
+  <ion-title padding color="secondary">
+    <h1 class="h1var">Add a note</h1>
+  </ion-title>
+</ion-toolbar>
 
 <ion-content padding>
-  <form [formGroup]="formGroup" (ngSubmit)="addNote(formGroup.value)"></form>
-  <ion-item
-    ><ion-label> Date </ion-label>
-    <ion-datetime
-      displayFormat="DD/MM/YYYY"
-      formControlName="date"
-    ></ion-datetime>
-  </ion-item>
-  <ion-item
-    ><ion-label> Subject </ion-label>
-    <ion-input name="subject" type="text" formControlName="subject"></ion-input>
-    <div
-      class="alert"
-      *ngIf="!formGroup.controls['subject'].valid"
+  <form [formGroup]="formGroup" (ngSubmit)="addNote(formGroup.value)">
+    <ion-item>
+      <ion-label> Date </ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" formControlName="date">
+      </ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label> Subject </ion-label>
+      <ion-input
+        name="subject"
+        type="text"
+        formControlName="subject"
+        required
+      ></ion-input>
+      <div
+        class="alert"
+        *ngIf="!formGroup.controls['subject'].valid
       &&
-      *ngIf="formGroup.controls['subject'].touched>"
-    ></div>
-  </ion-item>
-  <ion-item
-    ><ion-label> Title </ion-label>
-    <ion-input name="title" type="text" formControlName="title"></ion-input>
-    <div
-      class="alert"
-      *ngIf="!formGroup.controls['title'].valid"
+      formGroup.controls['subject'].touched"
+      >
+        Enter a Subject!
+      </div>
+    </ion-item>
+    <ion-item
+      ><ion-label> Title </ion-label>
+      <ion-input
+        name="title"
+        type="text"
+        formControlName="title"
+        required
+      ></ion-input>
+      <div
+        class="alert"
+        *ngIf="!formGroup.controls['title'].valid
       &&
-      *ngIf="formGroup.controls['title'].touched>"
+      formGroup.controls['title'].touched"
+      >
+        Enter a Title!
+      </div>
+    </ion-item>
+    <ion-item
+      ><ion-label> Note </ion-label>
+      <ion-input
+        name="content"
+        type="text"
+        formControlName="content"
+        required
+      ></ion-input>
+      <div
+        class="alert"
+        *ngIf="!formGroup.controls['content'].valid
+      &&
+      formGroup.controls['content'].touched"
+      >
+        Enter a Note!
+      </div>
+    </ion-item>
+    <ion-button type="submit" [disabled]="!formGroup.valid">
+      Save Note</ion-button
     >
-      {{ titleAlert }}
-    </div>
-  </ion-item>
-  <ion-item
-    ><ion-label> Note </ion-label>
-    <ion-input name="content" type="text" formControlName="content"></ion-input>
-    <div
-      class="alert"
-      *ngIf="!formGroup.controls['content'].valid"
-      &&
-      *ngIf="formGroup.controls['content'].touched>"
-    >
-      {{ contentAlert }}
-    </div>
-  </ion-item>
-  <ion-button type="submit" [disabled]="!formGroup.valid">Save Note</ion-button>
+  </form>
 </ion-content>

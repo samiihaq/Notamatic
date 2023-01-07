@@ -3,6 +3,7 @@ import { NavController } from '@ionic/angular';
 import { NoteService } from 'src/app/note-service.service';
 import { Note } from 'src/models/note.models';
 import { AddnotepagePage } from '../addnotepage/addnotepage.page';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-notes',
@@ -23,5 +24,9 @@ export class NotesPage {
 
   getAllNotes() {
     return this.noteService.getAllNotes();
+  }
+
+  notePageForward() {
+    this.navCtrl.navigateForward('/addnotepage');
   }
 }

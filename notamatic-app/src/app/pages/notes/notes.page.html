@@ -2,13 +2,14 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let note of notes | async">
-      {{ note.title }}
-    </button>
+    <ion-item button *ngFor="let note of notes | async">
+      {{ note.subject }}
+    </ion-item>
   </ion-list>
+
+  <div class="addButtonPosition">
+    <ion-tab-button (click)="notePageForward()">
+      <ion-icon color="secondary" name="add-circle"></ion-icon>
+    </ion-tab-button>
+  </div>
 </ion-content>
-<div class="addButtonPosition">
-  <ion-tab-button [routerLink]="['/addnotepage']">
-    <ion-icon color="secondary" name="add-circle"></ion-icon>
-  </ion-tab-button>
-</div>
