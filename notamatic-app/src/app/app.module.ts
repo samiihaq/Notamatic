@@ -6,15 +6,13 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginPage } from './pages/login/login.page';
-import { RegistrationPage } from './pages/registration/registration.page';
 import { IonicStorageModule } from '@ionic/storage';
 import { NoteService } from './note-service.service';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, RegistrationPage],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -29,6 +27,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SQLite,
   ],
   bootstrap: [AppComponent],
-  entryComponents: [AppComponent, LoginPage, RegistrationPage],
+  entryComponents: [AppComponent],
 })
 export class AppModule {}

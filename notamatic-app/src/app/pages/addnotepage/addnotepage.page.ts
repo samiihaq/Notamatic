@@ -40,6 +40,6 @@ export class AddnotepagePage {
 
   addNote(note: Note) {
     this.NoteService.addNote(note);
-    this.navCtrl.navigateBack('/tabs/notes');
+    this.navCtrl.navigateBack(['/tabs/notes']);
   }
 }

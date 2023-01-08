@@ -13,7 +13,9 @@
 
   <ion-list>
     <ion-item button *ngFor="let note of notes | async">
-      {{ note.subject }}
+      <h2 color="success">
+        Subject: {{ note.subject }} <br /><br />Title: {{ note.title }}
+      </h2>
     </ion-item>
   </ion-list>
 
