@@ -10,6 +10,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { NoteService } from './note-service.service';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,11 +21,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IonicStorageModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    NgCalendarModule,
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NoteService,
     SQLite,
+    NgCalendarModule,
   ],
   bootstrap: [AppComponent],
   entryComponents: [AppComponent],
