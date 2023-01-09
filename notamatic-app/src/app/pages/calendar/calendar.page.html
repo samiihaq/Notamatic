@@ -1,19 +1,19 @@
-<ion-nav>
-  <ion-text color="secondary"> <h1 class="h1">Calendar</h1></ion-text>
-</ion-nav>
-
+<div>
+  <ion-nav>
+    <ion-text color="secondary"> <h1 class="h1">Calendar</h1></ion-text>
+  </ion-nav>
+</div>
+<br /><br /><br /><br /><br /><br />
 <ion-content>
-  <div>
-    <calendar
-      [eventSource]="eventSource"
-      [calendarMode]="calendar.mode"
-      [currentDate]="calendar.currentDate"
-      (onCurrentDateChanged)="onCurrentDateChanged($event)"
-      (onEventSelected)="onEventSelected($event)"
-      (onTitleChanged)="onViewTitleChanged($event)"
-      (onTimeSelected)="onTimeSelected($event)"
-      [step]="calendar.step"
-    >
-    </calendar>
-  </div>
+  <calendar
+    [eventSource]="eventSource"
+    [calendarMode]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    (onCurrentDateChanged)="onCurrentDateChanged($event)"
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected($event)"
+    [step]="calendar.step"
+  >
+  </calendar>
 </ion-content>

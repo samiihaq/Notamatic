@@ -4,6 +4,7 @@ import { NoteService } from 'src/app/note-service.service';
 import { Note } from 'src/models/note.models';
 import { AddnotepagePage } from '../addnotepage/addnotepage.page';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ViewnotepagePage } from '../viewnotepage/viewnotepage.page';
 
 @Component({
   selector: 'app-notes',
@@ -11,7 +12,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   styleUrls: ['./notes.page.scss'],
 })
 export class NotesPage {
-  notes: Promise<Note[]>;
+  public notes: Promise<Note[]>;
+  private note: Note;
 
   doSomething(event) {
     setTimeout(() => {
@@ -34,5 +36,12 @@ export class NotesPage {
 
   notePageForward() {
     this.navCtrl.navigateForward('/tabs/addnotepage');
+  }
+
+  getNote(createDate: number) {
+    this.noteService.getNote(createDate).then((n) => {
+      this.note = n;
+      this.navCtrl.navigateForward('viewnotepage');
+    });
   }
 }

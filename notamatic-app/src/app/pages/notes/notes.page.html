@@ -12,10 +12,12 @@
   <ion-text color="secondary"> <h1 class="h1">Notes</h1></ion-text>
 
   <ion-list>
-    <ion-item button *ngFor="let note of notes | async">
-      <h2 color="success">
-        Subject: {{ note.subject }} <br /><br />Title: {{ note.title }}
-      </h2>
+    <ion-item
+      button
+      *ngFor="let note of notes | async"
+      (click)="getNote(note.createDate) "
+    >
+      <h2>Subject: {{ note.subject }} <br /><br />Title: {{ note.title }}</h2>
     </ion-item>
   </ion-list>
 

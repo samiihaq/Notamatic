@@ -44,6 +44,18 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'viewnotepage',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../viewnotepage/viewnotepage.module').then(
+                (m) => m.ViewnotepagePageModule
+              ),
+          },
+        ],
+      },
+      {
         path: '',
         redirectTo: '/tabs/notes',
         pathMatch: 'full',

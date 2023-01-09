@@ -11,6 +11,8 @@ import { NoteService } from './note-service.service';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgCalendarModule } from 'ionic2-calendar';
+import { ViewnotepagePage } from './pages/viewnotepage/viewnotepage.page';
+import { AddnotepagePage } from './pages/addnotepage/addnotepage.page';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +32,6 @@ import { NgCalendarModule } from 'ionic2-calendar';
     NgCalendarModule,
   ],
   bootstrap: [AppComponent],
-  entryComponents: [AppComponent],
+  entryComponents: [AppComponent, ViewnotepagePage, AddnotepagePage],
 })
 export class AppModule {}

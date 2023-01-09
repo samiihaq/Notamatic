@@ -22,8 +22,8 @@ const routes: Routes = [
       import('./pages/notes/notes.module').then((m) => m.NotesPageModule),
   },
   {
-    path: 'events',
-    loadChildren: () => import('./pages/events/events.module').then( m => m.EventsPageModule)
+    path: 'viewnotepage',
+    loadChildren: () => import('./pages/viewnotepage/viewnotepage.module').then( m => m.ViewnotepagePageModule)
   },
 ];
 
